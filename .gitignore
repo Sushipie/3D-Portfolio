@@ -1,3 +1,27 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fe20ae918594a1d97b34c9c7992b30a8f65f2a1649859713d66f14febd96e69a
-size 286
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Local Netlify folder
+.netlify

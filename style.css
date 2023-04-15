@@ -1,3 +1,282 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:14879bd7f9c4809c04068225a2812eda72520babe68b4430d9952b7a1df74fe4
-size 5356
+html {
+    scroll-behavior: smooth !important;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */;
+}
+
+body {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    background-color: black;
+    font-family: "Poppins", sans-serif;
+}
+
+/* 3D canvas --------------------------------------------------------------- */
+canvas {
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Backgroun Gradient --------------------------------------------------------------- */
+
+.gradient {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(;
+}
+
+/* Menu --------------------------------------------------------------- */
+
+.menu {
+    text-orientation: upright;
+    writing-mode: vertical-lr;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 2;
+    height: 100vh;
+    margin-left: 3%;
+}
+
+.menu-item {
+    padding: clamp(0.1em, 0.1vw, 0.5em);
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    color: #f9f5eb;
+    text-decoration: none;
+}
+
+.menu-item:hover {
+    color: #ea5455;
+}
+
+.menu-socials {
+    padding-top: 12%;
+    color: #f9f5eb;
+    text-decoration: none;
+}
+
+.menu-social-item {
+    cursor: pointer;
+    font-size: 1.2em;
+    color: #f9f5eb;
+    text-decoration: none;
+}
+
+.menu-social-item:hover {
+    color: #ea5455;
+}
+
+/* Burger ----------------------------------------------------- */
+
+#burger-menu-trigger {
+    display: none;
+}
+
+.burger {
+    display: none;
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    right: 0;
+    margin-top: 1.5%;
+    margin-right: 3%;
+}
+.burger-line {
+    display: block;
+    width: 30px;
+    height: 3px;
+    margin: 8px 0;
+    transition: transform 0.3s ease-in-out;
+    background-color: #f9f5eb;
+}
+
+/* Toggle the first line to form an "X" */
+#burger-menu-trigger:checked ~ .burger .burger-line1 {
+    transform: rotate(-45deg) translate(-10px, 6px);
+}
+
+/* Hide the second line */
+#burger-menu-trigger:checked ~ .burger .burger-line2 {
+    opacity: 0;
+}
+
+/* Toggle the third line to form an "X" */
+#burger-menu-trigger:checked ~ .burger .burger-line3 {
+    transform: rotate(45deg) translate(-10px, -6px);
+}
+
+#burger-menu-trigger:checked + .burger-menu {
+    display: block;
+}
+
+/* Burger Menu ------------------------------------------------- */
+
+.burger-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: absolute;
+    z-index: 3;
+    height: 100vh;
+    margin-top: 30%;
+}
+
+.burger-menu-items {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.burger-menu-item {
+    margin: 2%;
+    padding: clamp(0.1em, 0.1vw, 0.5em);
+    font-size: 1em;
+    font-weight: 600;
+    color: #f9f5eb;
+    text-decoration: none;
+}
+
+.burger-menu-socials {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.burger-menu-social-item {
+    margin: 2%;
+    font-size: 1.2em;
+    color: #f9f5eb;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 768px) {
+}
+.menu {
+      display: none;
+  }
+.burger {
+      display: block;
+  }
+}
+
+/* Hero section ----------------------------------------------------------- */
+
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    height: 100vh;
+    margin-right: 20%;
+    margin-left: 20%;
+    color: #f9f5eb;
+    text-align: center;
+}
+
+.hero-section h1 {
+    margin-bottom: 0;
+    font-size: clamp(2em, 5vw, 4em);
+    font-weight: 600;
+}
+
+.hero-section span {
+    margin-top: 0;
+    font-size: clamp(1em, 3vw, 2em);
+    font-weight: 600;
+    color: #ea5455;
+}
+
+.hero-section h2 {
+    margin-top: 0;
+    font-size: clamp(1em, 3vw, 2em);
+    font-weight: 400;
+}
+
+/* About section --------------------------------------------------------- */
+
+.about-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    height: 100vh;
+    margin-right: 20%;
+    margin-left: 20%;
+    color: #f9f5eb;
+    text-align: center;
+}
+
+.about-section h1 {
+    margin-bottom: 0;
+    font-size: clamp(2em, 5vw, 4em);
+    font-weight: 600;
+}
+
+.about-section p {
+    margin-top: 0;
+    font-size: clamp(1em, 3vw, 1em);
+    font-weight: 400;
+}
+
+/* Projects section --------------------------------------------------------- */
+
+.projects-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    height: 100vh;
+    margin-right: 20%;
+    margin-left: 20%;
+    color: #f9f5eb;
+    text-align: center;
+}
+
+.projects-section h1 {
+    margin-bottom: 0;
+    font-size: clamp(2em, 5vw, 4em);
+    font-weight: 600;
+}
+
+.projects-section p {
+    margin-top: 0;
+    font-size: clamp(1em, 3vw, 1em);
+    font-weight: 400;
+}
+
+.projects-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    height: 100vh;
+    margin-right: 20%;
+    margin-left: 20%;
+    color: #f9f5eb;
+    text-align: center;
+}
