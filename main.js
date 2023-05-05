@@ -13,7 +13,23 @@ const camera = new THREE.PerspectiveCamera(
   0.1,
   1000
 ); // create a camera
-const loader = new GLTFLoader(); // create a loader
+
+//Loading screen
+const loadingManager = new THREE.LoadingManager();
+
+loadingManager.onLoad = () => {
+  
+  const loadingScreen = document.getElementById("loading-screen");
+  loadingScreen.classList.add("fade-out");
+  // optional: remove loader from DOM via event listener
+ setTimeout(() => {
+  document.body.removeChild(loadingScreen);
+ }, 1000);
+}
+
+
+const houseloader = new GLTFLoader(loadingManager); // create a house loader
+const moonloader = new GLTFLoader(); // create a moon loader
 
 //Set the camera position
 camera.position.z = 5;
@@ -24,7 +40,7 @@ var house;
 var moon;
 
 //Load the house model
-loader.load(
+houseloader.load(
   "/models/house.glb",
   function (gltf) {
     house = gltf.scene;
@@ -38,7 +54,7 @@ loader.load(
 );
 
 //Load the moon model
-loader.load(
+moonloader.load(
   "/models/moon.glb",
   function (gltf) {
     moon = gltf.scene;
@@ -119,3 +135,98 @@ function updateCamera() {
   scene.rotation.y = window.scrollY / 500;
   camera.position.z = 5 + window.scrollY / 100;
 }
+
+function reveal() {
+  var reveals = document.querySelectorAll(".reveal");
+  for (var i = 0; i < reveals.length; i++) {
+    var windowHeight = window.innerHeight;
+    var elementTop = reveals[i].getBoundingClientRect().top;
+    var elementVisible = 150;
+    if (elementTop < windowHeight - elementVisible) {
+      reveals[i].classList.add("active");
+    } else {
+      reveals[i].classList.remove("active");
+    }
+  }
+}
+
+window.addEventListener("scroll", reveal);
+
+// To check the scroll position on page load
+reveal();
+
+
+function hackerEffect(){
+
+  const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+  document.querySelector("#hacked1").onmouseover = event => {
+    let iterations = 0
+    let interval = setInterval(() => {
+      event.target.innerText =  event.target.innerText.split("").map((letter, index) => 
+      {
+
+        if(index < iterations)
+        {
+          return event.target.dataset.value[index];
+        }
+        return letters[Math.floor(Math.random() * 26)]
+      })
+      
+      .join("");
+
+      if (iterations >= 9) {
+        clearInterval(interval);
+      }
+
+      iterations++;
+    }, 50);
+}
+
+  document.querySelector("#hacked2").onmouseover = event => {
+    let iterations = 0
+    let interval = setInterval(() => {
+      event.target.innerText =  event.target.innerText.split("").map((letter, index) => 
+      {
+
+        if(index < iterations)
+        {
+          return event.target.dataset.value[index];
+        }
+        return letters[Math.floor(Math.random() * 26)]
+      })
+      
+      .join("");
+
+      if (iterations >= 9) {
+        clearInterval(interval);
+      }
+
+      iterations++;
+    }, 50);
+}
+  document.querySelector("#hacked3").onmouseover = event => {
+    let iterations = 0
+    let interval = setInterval(() => {
+      event.target.innerText =  event.target.innerText.split("").map((letter, index) => 
+      {
+
+        if(index < iterations)
+        {
+          return event.target.dataset.value[index];
+        }
+        return letters[Math.floor(Math.random() * 26)]
+      })
+      
+      .join("");
+
+      if (iterations >= 9) {
+        clearInterval(interval);
+      }
+
+      iterations++;
+    }, 50);
+}
+}
+
+hackerEffect();
