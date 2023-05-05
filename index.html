@@ -10,10 +10,17 @@
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script type="module" src="/main.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">   
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"
+    />
     <title>Ahmad | Portfolio</title>
   </head>
   <body>
+    <!-- Preloader -->
+    <div id="loading-screen"></div>
+
+    <!-- App -->
     <div id="app">
       <!-- 3D canvas -->
       <canvas id="bg"> </canvas>
@@ -22,25 +29,41 @@
       <!-- Menu -->
       <div class="menu" id="menu">
         <div class="menu-items" id="menu-items">
-          <a class="menu-item" href="#home">Home</a>
-          <a class="menu-item" href="#projects">Projects</a>
-          <a class="menu-item" href="#about">About</a>
+          <a class="menu-item" id="hacked1" data-value="Home" href="#home"
+            >Home</a
+          >
+          <a
+            class="menu-item"
+            id="hacked2"
+            data-value="Projects"
+            href="#projects"
+            >Projects</a
+          >
+          <a class="menu-item" id="hacked3" data-value="About" href="#about"
+            >About</a
+          >
         </div>
         <div class="menu-socials">
-          <a class="menu-social-item" onClick="window.open('https://github.com/Sushipie', '_blank')" >
+          <a
+            class="menu-social-item"
+            onClick="window.open('https://github.com/Sushipie', '_blank')"
+          >
             <i class="devicon-github-original"></i>
           </a>
-          <a class="menu-social-item" onClick="window.open('https://www.linkedin.com/in/ahmadthakur', '_blank')">
+          <a
+            class="menu-social-item"
+            onClick="window.open('https://www.linkedin.com/in/ahmadthakur', '_blank')"
+          >
             <i class="devicon-linkedin-plain"></i>
           </a>
         </div>
-       </div>
+      </div>
       <!-- Burger -->
-       <input type="checkbox" id="burger-menu-trigger">
-       <label  for="burger-menu-trigger" class="burger">
-          <div class="burger-line burger-line1"></div>
-          <div class="burger-line burger-line2"></div>
-          <div class="burger-line burger-line3"></div>
+      <input type="checkbox" id="burger-menu-trigger" />
+      <label for="burger-menu-trigger" class="burger">
+        <div class="burger-line burger-line1"></div>
+        <div class="burger-line burger-line2"></div>
+        <div class="burger-line burger-line3"></div>
       </label>
       <!-- Burger Menu -->
       <div class="burger-menu">
@@ -50,13 +73,19 @@
           <a class="burger-menu-item" href="#about">About</a>
         </div>
         <div class="burger-menu-socials">
-          <a class="burger-menu-social-item" onClick="window.open('https://github.com/Sushipie', '_blank')" >
+          <a
+            class="burger-menu-social-item"
+            onClick="window.open('https://github.com/Sushipie', '_blank')"
+          >
             <i class="devicon-github-original"></i>
           </a>
-          <a class="burger-menu-social-item" onClick="window.open('https://www.linkedin.com/in/ahmadthakur', '_blank')">
+          <a
+            class="burger-menu-social-item"
+            onClick="window.open('https://www.linkedin.com/in/ahmadthakur', '_blank')"
+          >
             <i class="devicon-linkedin-plain"></i>
           </a>
-       </div>
+        </div>
       </div>
       <!-- Hero Section -->
       <div class="hero-section" id="home">
@@ -67,34 +96,50 @@
       </div>
       <!-- Projects Section -->
       <div class="projects-section" id="projects">
-          <div class="project-container">
-            <div class="project1">
-              <h2>Project 1</h2>
-              <div class="project1-card">
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
-                  quod, voluptate, quia, voluptas quas voluptatem quibusdam
-                  voluptatum quae quidem quos nesciunt. Quisquam, quae. Quisquam
-                  quae quod quibusdam, quos, voluptas, voluptatum quidem
-                  voluptatibus quia quas quibusdam.
-                </p>
-              </div>
-              <div class="project1-img">
-                <img src="https://picsum.photos/200/300" alt="" />
-              </div>
+        <div class="project-container reveal">
+          <div class="project1">
+            <h2>KaomojiPedia</h2>
+            <div class="project1-card"></div>
+            <div class="project1-img">
+              <a
+                href="https://kaomojipedia.netlify.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><img src="/images/kaomojipedia.png" alt="project 1"
+              /></a>
             </div>
           </div>
+        </div>
+
+        <div class="project-container reveal">
+          <div class="project1">
+            <h2>Discord Bot</h2>
+            <div class="project1-card"></div>
+            <div class="project1-img">
+              <a
+                href="https://github.com/Sushipie/Sad_Machine"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src="/images/discordbot.png" alt="" />
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
+
       <!-- About Section -->
       <div class="about-section" id="about">
         <div class="about-text">
           <h1>About Me</h1>
           <p>
-            I'm a Fullstack Web Developer based in Lahore, Pakistan. My projects include UX design, UI animations, and backend development. I'm currently working on a few projects and I'm always looking for new opportunities.
+            I'm a Fullstack Web Developer based in Lahore, Pakistan. My projects
+            include UX design, UI animations, and backend development. I'm
+            currently working on a few projects and I'm always looking for new
+            opportunities.
           </p>
-          <p class="copyright">
-            © 2023 Ahmad Thakur
-          </p>
+
+          <p class="copyright">© 2023 <span>Ahmad Thakur</span></p>
         </div>
       </div>
     </div>
